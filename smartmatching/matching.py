@@ -19,7 +19,7 @@ class Matching:
     专为5v5匹配开发
     规则如下：
     1、两边近5场的评分大致一样
-    2、不会有太多重叠位置
+    2、不会有太多重叠位置（暂未考虑）
     """
 
     def __init__(self, players):
@@ -68,12 +68,3 @@ class Matching:
         print('红方阵营：')
         for i in self.red_side:
             print(i, ' ')
-
-
-if __name__ == '__main__':
-    from smartmatching.dataparser import read_data
-    play_dict = read_data('../script/player_data.xlsx')
-    names = ['SJY', 'LSX', 'WMS', 'JYT', 'JL', 'BRIDGE', 'SNOW', 'YY', 'ZEX', 'WZ']
-    play_lst = [play_dict[name] for name in names]
-    matching_obj = Matching(play_lst)
-    matching_obj()
